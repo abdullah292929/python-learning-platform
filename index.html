@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learn Pro - Python Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Python Learn Pro</h1>
+            <p>Learn Python with AI-Powered Code Checker & Fixer</p>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <h2>💻 Code Editor</h2>
+                <textarea id="codeInput" placeholder="Write your Python code here...\n# Example:\nname = 'Abdullah'\nprint(name)"></textarea>
+                <div class="button-group">
+                    <button onclick="checkCode()" class="btn btn-check">✓ Check Code</button>
+                    <button onclick="runCode()" class="btn btn-run">▶ Run Code</button>
+                    <button onclick="clearCode()" class="btn btn-clear">🗑 Clear</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>📊 Output & Feedback</h2>
+                <div id="output" class="output-box"></div>
+                <div id="errors" class="errors-box"></div>
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
+        </div>
+
+        <div class="chatbot-section">
+            <h2>🤖 AI Assistant</h2>
+            <div id="chatHistory" class="chat-history"></div>
+            <div class="chat-input-group">
+                <input type="text" id="chatInput" placeholder="Ask me anything about Python...">
+                <button onclick="sendChat()" class="btn btn-chat">Send</button>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h2>📝 Code History</h2>
+            <div id="codeHistory" class="history-box"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
