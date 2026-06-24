@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 World Digital Clock</h1>
+            <p>View current time in different time zones</p>
+        </header>
+
+        <div class="controls">
+            <div class="format-toggle">
+                <button class="btn-format active" onclick="toggleFormat('24')">24 Hour</button>
+                <button class="btn-format" onclick="toggleFormat('12')">12 Hour</button>
+            </div>
+            <div class="timezone-selector">
+                <label for="add-timezone">Add Timezone:</label>
+                <select id="add-timezone">
+                    <option value="">Select a timezone...</option>
+                    <option value="UTC">UTC (London)</option>
+                    <option value="America/New_York">New York (EST)</option>
+                    <option value="America/Los_Angeles">Los Angeles (PST)</option>
+                    <option value="Europe/Paris">Paris (CET)</option>
+                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                    <option value="Asia/Dubai">Dubai (GST)</option>
+                    <option value="Australia/Sydney">Sydney (AEDT)</option>
+                    <option value="Asia/Kolkata">India (IST)</option>
+                    <option value="Asia/Shanghai">Shanghai (CST)</option>
+                    <option value="America/Toronto">Toronto (EST)</option>
+                    <option value="Europe/Berlin">Berlin (CET)</option>
+                    <option value="Asia/Bangkok">Bangkok (ICT)</option>
+                    <option value="America/Mexico_City">Mexico City (CST)</option>
+                    <option value="Europe/Moscow">Moscow (MSK)</option>
+                    <option value="Asia/Singapore">Singapore (SGT)</option>
+                </select>
+                <button class="btn-add" onclick="addTimezone()">Add</button>
+            </div>
+        </div>
+
+        <div class="clocks-grid" id="clocks-grid">
+            <!-- Clocks will be generated here -->
+        </div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00d4ff, #0099ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.format-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-format {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #00d4ff;
+    background: transparent;
+    color: #00d4ff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.btn-format:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-format.active {
+    background: #00d4ff;
+    color: #1a1a2e;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.timezone-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.timezone-selector label {
+    font-weight: 600;
+    color: #00d4ff;
+    white-space: nowrap;
+}
+
+#add-timezone {
+    flex: 1;
+    padding: 10px 15px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+#add-timezone option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.btn-add {
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #00d4ff, #0099ff);
+    border: none;
+    color: #1a1a2e;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.clock-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 255, 0.1) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.clock-card:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.clock-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.timezone-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.clock-display {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.time {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.date {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.day-name {
+    font-size: 0.85em;
+    color: #00d4ff;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.remove-btn {
+    background: rgba(255, 68, 68, 0.2);
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.remove-btn:hover {
+    background: rgba(255, 68, 68, 0.4);
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.empty-state .emoji {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .timezone-selector {
+        flex-direction: column;
+    }
+
+    .timezone-selector label {
+        width: 100%;
+    }
+
+    #add-timezone {
+        width: 100%;
+    }
+
+    .clocks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .time {
+        font-size: 2em;
+    }
+}
